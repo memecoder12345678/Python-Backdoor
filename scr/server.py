@@ -57,3 +57,5 @@ try:
     server()
 except KeyboardInterrupt:
     print(f"\n[{Fore.LIGHTRED_EX}-{Fore.RESET}] Server Stopped")
+except Exception as e:
+    print(f"[{Fore.LIGHTRED_EX}-{Fore.RESET}] Server Stopped: {e}")
