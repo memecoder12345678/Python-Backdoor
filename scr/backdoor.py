@@ -53,7 +53,7 @@ def shell():
             result = execute.stdout.read() + execute.stderr.read()
             result = result.decode()
             if result == "":
-                result = "No output"
+                result = " "
             send(result)
 
 
