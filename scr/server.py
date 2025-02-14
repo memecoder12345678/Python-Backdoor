@@ -26,7 +26,7 @@ def recv():
 
 def server():
     while True:
-        command = input(f"[{Fore.CYAN}{target_ip[0]}{Fore.RESET}]: ")
+        command = input(f"[{Fore.CYAN}{target_ip[0]}{Fore.RESET}]{Fore.LIGHTGREEN_EX}${Fore.RESET} ")
         send(command)
         if command.lower().strip() == "quit" or command.lower().strip() == "exit":
             break
@@ -38,7 +38,7 @@ def server():
             result = recv()
             print(result)
 
-
+os.system("cls" if os.name == "nt" else "clear")
 server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_sock.bind((SERVER_IP, SERVER_PORT))
 
